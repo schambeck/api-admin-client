@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  web:
+    image: api-admin-client:latest
+    networks:
+      - schambeck-net
+    environment:
+      - SERVER_PORT=0
+      - SPRING_BOOT_ADMIN_CLIENT_URL=http://srv-spring-admin:9999
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 384M
+        reservations:
+          memory: 256M
+networks:
+  schambeck-net:
+    external: true
