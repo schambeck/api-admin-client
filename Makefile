@@ -53,7 +53,6 @@ docker-run:
 	docker run -d \
 		--restart=always \
 		--net schambeck-net \
-		--name ${APP} \
 		--env SPRING_BOOT_ADMIN_CLIENT_URL=http://srv-spring-admin:9999 \
 		--env SPRING_APPLICATION_NAME=api-admin-client \
 		${DOCKER_IMAGE}
