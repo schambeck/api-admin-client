@@ -50,8 +50,7 @@ docker-build:
 	DOCKER_BUILDKIT=1 docker build -f ${DOCKER_CONF} -t ${DOCKER_IMAGE} --build-arg=JAR_FILE=${JAR} build/libs
 
 docker-run:
-	docker run -d \
-		--restart=always \
+	docker run -d --rm \
 		--net schambeck-net \
 		--env SPRING_BOOT_ADMIN_CLIENT_URL=http://srv-spring-admin:9999 \
 		--env SPRING_APPLICATION_NAME=${ARGS} \
